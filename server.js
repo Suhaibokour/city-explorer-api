@@ -17,7 +17,7 @@ class Forecast{
 
 }
 
-
+// https://city-explorer-api-suhaib.herokuapp.com/?foundData=Paris
 // http://localhost:3020/?foundData=Seattle
 server.get('/',(req,res)=>{
     let foundData = req.query.foundData;
