@@ -20,7 +20,7 @@ let PORT = process.env.PORT;
 
 // http://localhost:3020/city?foundData=Seattle
 
-server.get('/city',(req,res) =>{
+server.get('/',(req,res) =>{
     let dataArr=[];
     let foundData = req.query.foundData;
     let result = weatherData.map((item)=>{
@@ -38,13 +38,13 @@ server.get('/city',(req,res) =>{
     let result3 = result2.data.map((item) => {
         let arr=[];
         arr.push(item.weather.description,item.valid_date);
-        // dataArr.push(item.weather.description,item.valid_date);
+        dataArr.push(item.weather.description,item.valid_date);
         return arr;
     })
 
 console.log(dataArr);
 
-   res.send(dataArr+result3);
+   res.send(dataArr);
 })
 
 
