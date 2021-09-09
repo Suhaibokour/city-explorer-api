@@ -6,11 +6,15 @@ const axios = require('axios');
 
 
 
+// https://api.themoviedb.org/3/movie/550?api_key=${process.env.MOVIES_API_key}&query=${query}
 
+
+// http:localhost:3020/movie?api_key=79f3cffae9d59c994ba1114162917204&query=joker
 
 function getMovie(req, res) {
     let query = req.query.searchQuery;
-    let url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIES_API_key}&query=${query}`;
+    let url = `
+    // https://api.themoviedb.org/3/movie/550?api_key=${process.env.MOVIES_API_key}&query=${query}`;
   
     axios
     .get(url)
