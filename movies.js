@@ -13,7 +13,7 @@ const axios = require('axios');
 
 function getMovie(req, res) {
     let query = req.query.searchQuery;
-    let url = `https://api.themoviedb.org/3/movie/550?api_key=${process.env.MOVIES_API_key}&query=${query}`;
+    let url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIES_API_key}&query=${query}`;
   console.log(url);
     axios
     .get(url)
