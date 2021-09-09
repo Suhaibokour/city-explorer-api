@@ -3,8 +3,8 @@ require('dotenv').config();
 const axios = require('axios');
 
 
-
-
+let cors = require('cors');
+server.use(cors());
 
 function getWeatherInfo(req, res) {
     let query = req.query.city;
