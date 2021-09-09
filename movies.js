@@ -1,8 +1,8 @@
 'use strict';
 require('dotenv').config();
 const axios = require('axios');
-let cors = require('cors');
-server.use(cors());
+// let cors = require('cors');
+// server.use(cors());
 
 
 
