@@ -14,7 +14,7 @@ const getWeather =require('./weather')
 // http://localhost:3020/daily?city=irbid&key=50e57a92c64a49938e121a197570727a
 server.get('/daily', getWeather);
 
-server.get('/movie',getMovie);
+server.get('/movies',getMovie);
 
 server.get('*', (req, res) => {
     res.status(404).send('Sorry, page not found');

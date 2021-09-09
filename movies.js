@@ -9,12 +9,12 @@ const axios = require('axios');
 // https://api.themoviedb.org/3/movie/550?api_key=${process.env.MOVIES_API_key}&query=${query}
 
 
-// http:localhost:3020/movie?api_key=79f3cffae9d59c994ba1114162917204&query=joker
+// http:localhost:3020/movie?api_key=79f3cffae9d59c994ba1114162917204&searchQuery=joker
 
 function getMovie(req, res) {
     let query = req.query.searchQuery;
     let url = `https://api.themoviedb.org/3/movie/550?api_key=${process.env.MOVIES_API_key}&query=${query}`;
-  
+  console.log(url);
     axios
     .get(url)
     .then( result => {
@@ -27,10 +27,7 @@ function getMovie(req, res) {
     })
     .catch(err => console.log(err))
   
-    // console.log(url)
-    // res.send({
-    //   message: 'from the server side'
-    // })
+   
   }
   
   
