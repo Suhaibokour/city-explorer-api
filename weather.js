@@ -1,13 +1,20 @@
 'use strict';
 require('dotenv').config();
 const axios = require('axios');
-
+let myMemory = {};
 
 // let cors = require('cors');
 // server.use(cors());
 
 function getWeatherInfo(req, res) {
     let query = req.query.city;
+    if (Memory[query] !== undefined) {
+      res.send(Memory[query]);
+    } 
+  
+  
+    else 
+    {
     let url = `https://api.weatherbit.io/v2.0/forecast/daily?city=${query}&key=${process.env.WEATHER_API_key}`;
     
     
@@ -18,13 +25,14 @@ function getWeatherInfo(req, res) {
       let newWeather =  result.data.data.map(item => {
         return new Forecast(item);
       })
+      Memory[query] = newWeather;
       res.send(newWeather)
     })
     .catch(err => console.log(err))
     
   }
 
-
+}
 
 
   class Forecast {
